@@ -4,6 +4,6 @@
     $query = mysqli_query($conn,$sql_text);
     while($objresult = mysqli_fetch_assoc($query))
     {
-        echo $objresult['Answer']."<br>";
+        echo $objresult['type']."<br>";
     }
 ?>
