@@ -30,7 +30,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
         if ($event['type'] == 'โหลๆ')
         {
             
-            $txtback = '5 โหล'
+            $txtback = '5 โหล';
                   
         }
         reply_msg($txtback,$replyToken);
