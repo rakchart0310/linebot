@@ -27,13 +27,17 @@ $events = json_decode($content, true);//แปลง json เป็น php
 if (!is_null($events['events'])) //check ค่าในตัวแปร $events
 {
     foreach ($events['events'] as $event) {
-        if ($event['type'] == 'โหลๆ')
+      if ($event['type'] == 'message' && $event['message']['type'] == 'text')   
         {
-            
+            $replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
+            $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
+            $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin 
+            if ($txtin == 'โหลๆ'){
             $txtback = '5 โหล';
                   
-        }
+            }
         reply_msg($txtback,$replyToken);
+      } 
     }
 }
 echo "BOT OK";
