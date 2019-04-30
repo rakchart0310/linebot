@@ -22,7 +22,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
 }
 
 // รับข้อมูล
-require('Connect_db.php')
+require('Connect_DB.php')
 $content = file_get_contents('php://input');//รับข้อมูลจากไลน์
 $events = json_decode($content, true);//แปลง json เป็น php
 if (!is_null($events['events'])) //check ค่าในตัวแปร $events
