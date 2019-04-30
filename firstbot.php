@@ -22,6 +22,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
 }
 
 // รับข้อมูล
+require('connect_db.php')
 $content = file_get_contents('php://input');//รับข้อมูลจากไลน์
 $events = json_decode($content, true);//แปลง json เป็น php
 if (!is_null($events['events'])) //check ค่าในตัวแปร $events
@@ -31,12 +32,15 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
         {
             $replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
-            $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin 
-            if ($txtin == 'โหลๆ'){
-            $txtback = '5 โหล';
-                  
+            $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
+            $sql_text = "SELECT * FROM dwdm WHERE TYPE LIKE '$txtin%'";
+            $query = mysqli_query($con,$sql_text);
+            while($obj = mywqli_fetch_assoc($query))
+            {
+                $txt_back = $txt_back."\n".$obj["eq"];
             }
-        reply_msg($txtback,$replyToken);
+            reply_msg($txtback,$replyToken);
+           
       } 
     }
 }
