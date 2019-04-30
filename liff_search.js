@@ -1,4 +1,4 @@
-fuction test()
+function test()
 {
     var office = document.getElementById('office_select').value;
     alert(office);
