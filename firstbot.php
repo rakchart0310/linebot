@@ -37,7 +37,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))
             {
-                $txtback = $txtback."\n"."การไฟฟ้าฯ".$obj["กฟฟ."] ."วันที่ติดตั้ง"." ".$obj["วันที่ติดตั้ง"];
+                $txtback = $txtback."\n"."การไฟฟ้าฯ".$obj["กฟฟ."] ." "."วันที่ติดตั้ง"." ".$obj["วันที่ติดตั้ง"];
             }
             reply_msg($txtback,$replyToken);
            
