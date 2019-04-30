@@ -1,11 +1,11 @@
 fuction test()
 {
-    var office = document.getElementById("office_select").value;
+    var office = document.getElementById('office_select').value;
     alert(office);
 }
 function search()
 {
-    var office_select = document.getElementById("office_select").value
+    var office_select = document.getElementById('office_select').value
     var keyword = document.getElementById("keyword").value
     var formData = new FormData();
     formData.append('office', office_select);
