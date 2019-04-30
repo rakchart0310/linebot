@@ -5,7 +5,7 @@
     $keyword = $_POST["keyword"];
     /*$office = 'j091';
     $keyword = '00';*/
-    $sql_text = "SELECT * FROM tbl_equipment WHERE office_id = '$office' AND (equip_id LIKE '%$keyword%' OR equip_name LIKE '%$keyword%')";
+    $sql_text = "SELECT * FROM dwdm WHERE type = '$office' AND (type LIKE '%$keyword%' OR ประเภท LIKE '%$keyword%')";
     $query = mysqli_query($conn,$sql_text);
     $data_return = array();
     while($obj = mysqli_fetch_assoc($query))
