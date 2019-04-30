@@ -1,6 +1,6 @@
 fuction test()
 {
-    var office = document.getElementById('office_select').value;
+    var office = document.getElementById("office_select").value;
     alert(office);
 }
 function search()
