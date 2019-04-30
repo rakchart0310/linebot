@@ -8,7 +8,7 @@
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="liff_search.js"></script>
+		<script src="/liff_search.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Sarabun|Roboto" rel="stylesheet">
 		
 	</head>
